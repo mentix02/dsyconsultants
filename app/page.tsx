@@ -1,103 +1,185 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Playfair_Display } from "next/font/google";
+import { Gavel, Shield, Briefcase, Phone, Mail } from "lucide-react";
 
-export default function Home() {
+import BlurFade from "@/components/ui/blur-fade";
+import Contact from "@/components/landing/contact";
+import ServiceCard from "@/components/landing/service-card";
+
+const playfair = Playfair_Display({ subsets: ["latin"], display: "swap" });
+
+export default async function Page() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* Hero */}
+      <section className="relative">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
+          <div className="space-y-6">
+            <BlurFade inView>
+              <span className="inline-block rounded-full border border-white/15 px-3 py-1 text-xs tracking-wider text-white/60">
+                Since 2018
+              </span>
+            </BlurFade>
+            <BlurFade inView>
+              <h1 className={`text-4xl leading-tight md:text-6xl ${playfair.className}`}>Redefining Legal Care</h1>
+            </BlurFade>
+            <BlurFade inView>
+              <p className="max-w-xl text-white/70">
+                DSY CONSULTANTS is a Legal Consulting Agency based out of Faridabad that has been delivering solutions
+                to clients since 2018. We offer an impressive portfolio of professional consulting services that are
+                completely customizable for your business needs and issues. Whatever your problems may be.
+              </p>
+            </BlurFade>
+            <BlurFade inView>
+              <div className="flex items-center gap-4">
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-medium text-black hover:bg-white/90"
+                >
+                  Get in touch
+                </Link>
+                <Link
+                  href="tel:9899950713"
+                  className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white"
+                >
+                  <Phone className="h-4 w-4" /> +91 9899950713
+                </Link>
+              </div>
+            </BlurFade>
+          </div>
+          <div className="flex items-center md:justify-end">
+            <BlurFade inView>
+              <div className="w-full rounded-lg border border-white/10 p-6">
+                <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 rounded-md border border-white/15 p-2">
+                      <Gavel className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <p className="font-medium">Litigation Strategy</p>
+                      <p className="text-sm text-white/60">Clarity and direction for complex disputes.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 rounded-md border border-white/15 p-2">
+                      <Briefcase className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <p className="font-medium">Corporate Advisory</p>
+                      <p className="text-sm text-white/60">Governance, structuring, and transactions.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 rounded-md border border-white/15 p-2">
+                      <Shield className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <p className="font-medium">Regulatory Compliance</p>
+                      <p className="text-sm text-white/60">Stay aligned with evolving regulations.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 rounded-md border border-white/15 p-2">
+                      <Mail className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <p className="font-medium">Contract Review & Drafting</p>
+                      <p className="text-sm text-white/60">Clear, protective, and enforceable documents.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </BlurFade>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="border-y border-white/10">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="mb-10 flex items-end justify-between">
+            <BlurFade inView>
+              <h2 className={`text-2xl md:text-3xl ${playfair.className}`}>Our Services</h2>
+            </BlurFade>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <BlurFade inView delay={0.25 + 1 * 0.05}>
+              <ServiceCard
+                icon={<Gavel className="h-5 w-5" aria-hidden="true" />}
+                title="Dispute Resolution"
+                desc="Strategy-first approach for litigation and arbitration."
+              />
+            </BlurFade>
+            <BlurFade inView delay={0.25 + 2 * 0.05}>
+              <ServiceCard
+                icon={<Briefcase className="h-5 w-5" aria-hidden="true" />}
+                title="Corporate Advisory"
+                desc="Entity structuring, deals, due diligence, and governance."
+              />
+            </BlurFade>
+            <BlurFade inView delay={0.25 + 3 * 0.05}>
+              <ServiceCard
+                icon={<Shield className="h-5 w-5" aria-hidden="true" />}
+                title="Compliance"
+                desc="Regulatory risk assessment and ongoing compliance support."
+              />
+            </BlurFade>
+            <BlurFade inView delay={0.25 + 4 * 0.05}>
+              <ServiceCard
+                icon={<Mail className="h-5 w-5" aria-hidden="true" />}
+                title="Contracts"
+                desc="Drafting, reviewing, and negotiation for protection and clarity."
+              />
+            </BlurFade>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-2">
+          <div className="space-y-4">
+            <BlurFade inView>
+              <h2 className={`text-2xl md:text-3xl ${playfair.className}`}>About DSY Consultants</h2>
+            </BlurFade>
+            <BlurFade inView>
+              <p className="text-white/70">
+                DSY CONSULTANTS was founded in 2018 with a single mission: to be the most successful, creative, and
+                ground-breaking consulting agency. We approach each of our clients with fresh eyes to develop
+                customized, unique strategies and solutions. Our solutions are creative and tailored for your
+                situations. Contact us today and see what we can do for you.
+              </p>
+            </BlurFade>
+          </div>
+          <BlurFade inView>
+            <div className="rounded-lg border border-white/10 p-6">
+              <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <dt className="text-sm text-white/60">Phone</dt>
+                  <dd className="mt-1">
+                    <Link href="tel:9899950713" className="hover:underline">
+                      +91 9899950713
+                    </Link>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-white/60">Email</dt>
+                  <dd className="mt-1">
+                    <Link href="mailto:dsyconsultants@gmail.com" className="hover:underline">
+                      dsyconsultants@gmail.com
+                    </Link>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </BlurFade>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <BlurFade inView>
+        <Contact />
+      </BlurFade>
+    </>
   );
 }
