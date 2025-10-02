@@ -103,7 +103,7 @@ export default async function Page() {
             </BlurFade>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <BlurFade inView delay={0.25 + 1 * 0.05}>
+            <BlurFade inView delay={0.25 + 0.05}>
               <ServiceCard
                 icon={<Gavel className="h-5 w-5" aria-hidden="true" />}
                 title="Dispute Resolution"

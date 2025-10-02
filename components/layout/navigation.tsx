@@ -20,17 +20,14 @@ export default function Navigation() {
             About
           </Link>
           <Link href="/#contact" className="text-sm text-white/80 hover:text-white">
-            Contact
-          </Link>
-          <Link href="/faq" className="text-sm text-white/80 hover:text-white">
-            FAQ
+            Consult Today
           </Link>
         </nav>
         <Link
-          href="/#contact"
+          href="/faq"
           className="group inline-flex items-center gap-2 rounded-full border border-white px-4 py-2 text-sm hover:bg-white hover:text-black"
         >
-          Consult Today <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          FAQ <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </Link>
       </div>
     </header>

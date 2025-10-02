@@ -1,7 +1,7 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
 import { HelpCircle, ChevronDown, Phone, Mail } from "lucide-react";
+
 import BlurFade from "@/components/ui/blur-fade";
 
 export const metadata: Metadata = {
